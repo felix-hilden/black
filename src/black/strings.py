@@ -136,7 +136,10 @@ def normalize_string_prefix(s: str, remove_u_prefix: bool = False) -> str:
     match = re.match(r"^([" + STRING_PREFIX_CHARS + r"]*)(.*)$", s, re.DOTALL)
     assert match is not None, f"failed to match string {s!r}"
     orig_prefix = match.group(1)
+
     new_prefix = orig_prefix.replace("F", "f").replace("B", "b").replace("U", "u")
+    if len(new_prefix) == 2 and "r" != new_prefix[0].lower():
+        new_prefix = new_prefix[::-1]
     if remove_u_prefix:
         new_prefix = new_prefix.replace("u", "")
     return f"{new_prefix}{match.group(2)}"

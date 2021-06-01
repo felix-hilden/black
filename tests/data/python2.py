@@ -5,10 +5,11 @@ import sys
 print >> sys.stderr , "Warning:" ,
 print >> sys.stderr , "this is a blast from the past."
 print >> sys.stderr , "Look, a repr:", `sys`
+print >> sys.stderr , U"Even these prefixes are normalized!"
 
 
 def function((_globals, _locals)):
-    exec ur"print 'hi from exec!'" in _globals, _locals
+    exec "print 'hi from exec!'" in _globals, _locals
 
 
 function((globals(), locals()))
@@ -24,10 +25,11 @@ import sys
 print >>sys.stderr, "Warning:",
 print >>sys.stderr, "this is a blast from the past."
 print >>sys.stderr, "Look, a repr:", ` sys `
+print >>sys.stderr, u"Even these prefixes are normalized!"
 
 
 def function((_globals, _locals)):
-    exec ur"print 'hi from exec!'" in _globals, _locals
+    exec "print 'hi from exec!'" in _globals, _locals
 
 
 function((globals(), locals()))
