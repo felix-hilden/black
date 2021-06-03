@@ -315,7 +315,7 @@ class BlackTestCase(BlackBaseTestCase):
         expected, _ = read_data("expression.diff")
         tmp_file = Path(black.dump_to_file(source))
         diff_header = re.compile(
-            rf"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
+            fr"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
             r"\d\d:\d\d:\d\d\.\d\d\d\d\d\d \+\d\d\d\d"
         )
         try:
@@ -428,7 +428,7 @@ class BlackTestCase(BlackBaseTestCase):
         expected, _ = read_data("expression_skip_magic_trailing_comma.diff")
         tmp_file = Path(black.dump_to_file(source))
         diff_header = re.compile(
-            rf"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
+            fr"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
             r"\d\d:\d\d:\d\d\.\d\d\d\d\d\d \+\d\d\d\d"
         )
         try:
@@ -2050,7 +2050,7 @@ class BlackTestCase(BlackBaseTestCase):
         expected, _ = read_data("missing_final_newline.diff")
         tmp_file = Path(black.dump_to_file(source, ensure_final_newline=False))
         diff_header = re.compile(
-            rf"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
+            fr"{re.escape(str(tmp_file))}\t\d\d\d\d-\d\d-\d\d "
             r"\d\d:\d\d:\d\d\.\d\d\d\d\d\d \+\d\d\d\d"
         )
         try:

@@ -5,7 +5,7 @@ import sys
 print >> sys.stderr , "Warning:" ,
 print >> sys.stderr , "this is a blast from the past."
 print >> sys.stderr , "Look, a repr:", `sys`
-print >> sys.stderr , U"Even these prefixes are normalized!"
+print >> sys.stderr , Ur"Even these prefixes are normalized!"
 
 
 def function((_globals, _locals)):
@@ -25,7 +25,7 @@ import sys
 print >>sys.stderr, "Warning:",
 print >>sys.stderr, "this is a blast from the past."
 print >>sys.stderr, "Look, a repr:", ` sys `
-print >>sys.stderr, u"Even these prefixes are normalized!"
+print >>sys.stderr, ur"Even these prefixes are normalized!"
 
 
 def function((_globals, _locals)):
